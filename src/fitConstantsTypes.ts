@@ -1,26 +1,191 @@
-class FitConstants {
+import { ValueTypeT } from "./fitTypesTypes";
 
-	static activity = {
+export default interface FitConstantsI {
+	activity: activityT
+  activity_class: activity_classT
+  activity_level: activity_levelT
+  activity_subtype: activity_subtypeT
+  activity_type: activity_typeT
+  analog_watchface_layout: analog_watchface_layoutT
+  ant_network: ant_networkT
+  antplus_device_type: antplus_device_typeT
+  attitude_stage: attitude_stageT
+  attitude_validity: attitude_validityT
+  auto_activity_detect: auto_activity_detectT
+  auto_sync_frequency: auto_sync_frequencyT
+  autolap_trigger: autolap_triggerT
+  autoscroll: autoscrollT
+  backlight_mode: backlight_modeT
+  backlight_timeout: backlight_timeoutT
+  battery_status: battery_statusT
+  bench_press_exercise_name: bench_press_exercise_nameT
+  bike_light_beam_angle_mode: bike_light_beam_angle_modeT
+  bike_light_network_config_type: bike_light_network_config_typeT
+  body_location: body_locationT
+  bp_status: bp_statusT
+  calf_raise_exercise_name: calf_raise_exercise_nameT
+  camera_event_type: camera_event_typeT
+  camera_orientation_type: camera_orientation_typeT
+  cardio_exercise_name: cardio_exercise_nameT
+  carry_exercise_name: carry_exercise_nameT
+  checksum: checksumT
+  chop_exercise_name: chop_exercise_nameT
+  climb_pro_event: climb_pro_eventT
+  comm_timeout_type: comm_timeout_typeT
+  connectivity_capabilities: connectivity_capabilitiesT
+  core_exercise_name: core_exercise_nameT
+  course_capabilities: course_capabilitiesT
+  course_point: course_pointT
+  crunch_exercise_name: crunch_exercise_nameT
+  curl_exercise_name: curl_exercise_nameT
+  date_mode: date_modeT
+  date_time: date_timeT
+  day_of_week: day_of_weekT
+  deadlift_exercise_name: deadlift_exercise_nameT
+  device_index: device_indexT
+  digital_watchface_layout: digital_watchface_layoutT
+  display_heart: display_heartT
+  display_measure: display_measureT
+  display_orientation: display_orientationT
+  display_position: display_positionT
+  display_power: display_powerT
+  dive_alarm_type: dive_alarm_typeT
+  dive_backlight_mode: dive_backlight_modeT
+  dive_gas_status: dive_gas_statusT
+  event: eventT
+  event_type: event_typeT
+  exd_data_units: exd_data_unitsT
+  exd_descriptors: exd_descriptorsT
+  exd_display_type: exd_display_typeT
+  exd_layout: exd_layoutT
+  exd_qualifiers: exd_qualifiersT
+  exercise_category: exercise_categoryT
+  favero_product: favero_productT
+  file_flags: file_flagsT
+  fit_base_type: fit_base_typeT
+  fit_base_unit: fit_base_unitT
+  fitness_equipment_state: fitness_equipment_stateT
+  flye_exercise_name: flye_exercise_nameT
+  garmin_product: garmin_productT
+  gender: genderT
+  goal: goalT
+  goal_recurrence: goal_recurrenceT
+  goal_source: goal_sourceT
+  hip_raise_exercise_name: hip_raise_exercise_nameT
+  hip_stability_exercise_name: hip_stability_exercise_nameT
+  hip_swing_exercise_name: hip_swing_exercise_nameT
+  hr_type: hr_typeT
+  hr_zone_calc: hr_zone_calcT
+  hyperextension_exercise_name: hyperextension_exercise_nameT
+  intensity: intensityT
+  language: languageT
+  language_bits_0: language_bits_0T
+  language_bits_1: language_bits_1T
+  language_bits_2: language_bits_2T
+  language_bits_3: language_bits_3T
+  language_bits_4: language_bits_4T
+  lap_trigger: lap_triggerT
+  lateral_raise_exercise_name: lateral_raise_exercise_nameT
+  left_right_balance: left_right_balanceT
+  left_right_balance_100: left_right_balance_100T
+  leg_curl_exercise_name: leg_curl_exercise_nameT
+  leg_raise_exercise_name: leg_raise_exercise_nameT
+  length_type: length_typeT
+  local_date_time: local_date_timeT
+  lunge_exercise_name: lunge_exercise_nameT
+  manufacturer: manufacturerT
+  mesg_count: mesg_countT
+  mesg_num: mesg_numT
+  message_index: message_indexT
+  olympic_lift_exercise_name: olympic_lift_exercise_nameT
+  plank_exercise_name: plank_exercise_nameT
+  plyo_exercise_name: plyo_exercise_nameT
+  power_phase_type: power_phase_typeT
+  pull_up_exercise_name: pull_up_exercise_nameT
+  push_up_exercise_name: push_up_exercise_nameT
+  pwr_zone_calc: pwr_zone_calcT
+  radar_threat_level_type: radar_threat_level_typeT
+  rider_position_type: rider_position_typeT
+  row_exercise_name: row_exercise_nameT
+  run_exercise_name: run_exercise_nameT
+  schedule: scheduleT
+  segment_delete_status: segment_delete_statusT
+  segment_lap_status: segment_lap_statusT
+  segment_leaderboard_type: segment_leaderboard_typeT
+  segment_selection_type: segment_selection_typeT
+  sensor_type: sensor_typeT
+  session_trigger: session_triggerT
+  set_type: set_typeT
+  shoulder_press_exercise_name: shoulder_press_exercise_nameT
+  shoulder_stability_exercise_name: shoulder_stability_exercise_nameT
+  shrug_exercise_name: shrug_exercise_nameT
+  side: sideT
+  sit_up_exercise_name: sit_up_exercise_nameT
+  source_type: source_typeT
+  sport: sportT
+  sport_bits_0: sport_bits_0T
+  sport_bits_1: sport_bits_1T
+  sport_bits_2: sport_bits_2T
+  sport_bits_3: sport_bits_3T
+  sport_bits_4: sport_bits_4T
+  sport_bits_5: sport_bits_5T
+  sport_bits_6: sport_bits_6T
+  sport_event: sport_eventT
+  squat_exercise_name: squat_exercise_nameT
+  stroke_type: stroke_typeT
+  sub_sport: sub_sportT
+  supported_exd_screen_layouts: supported_exd_screen_layoutsT
+  swim_stroke: swim_strokeT
+  switch: switchT
+  tap_sensitivity: tap_sensitivityT
+  time_mode: time_modeT
+  time_zone: time_zoneT
+  timer_trigger: timer_triggerT
+  tissue_model_type: tissue_model_typeT
+  tone: toneT
+  total_body_exercise_name: total_body_exercise_nameT
+  triceps_extension_exercise_name: triceps_extension_exercise_nameT
+  turn_type: turn_typeT
+  user_local_id: user_local_idT
+  warm_up_exercise_name: warm_up_exercise_nameT
+  watchface_mode: watchface_modeT
+  water_type: water_typeT
+  weather_report: weather_reportT
+  weather_severe_type: weather_severe_typeT
+  weather_severity: weather_severityT
+  weather_status: weather_statusT
+  weight: weightT
+  wkt_step_duration: wkt_step_durationT
+  wkt_step_target: wkt_step_targetT
+  workout_capabilities: workout_capabilitiesT
+  workout_equipment: workout_equipmentT
+  workout_hr: workout_hrT
+  workout_power: workout_powerT
+  file: fileT
+  constant_types: constant_typesT
+}
+
+export type activityT = {
 		__name: "activity",
 		"manual": 0,
 		"auto_multi_sport": 1,
 	};
 
-	static activity_class = {
+export type activity_classT = {
 		__name: "activity_class",
 		"level": 0,
 		"level_max": 100,
 		"athlete": 0,
 	};
 
-	static activity_level = {
+export type activity_levelT = {
 		__name: "activity_level",
 		"low": 0,
 		"medium": 1,
 		"high": 2,
 	};
 
-	static activity_subtype = {
+export type activity_subtypeT = {
 		__name: "activity_subtype",
 		"generic": 0,
 		"treadmill": 1,
@@ -44,7 +209,7 @@ class FitConstants {
 		"all": 254,
 	};
 
-	static activity_type = {
+export type activity_typeT = {
 		__name: "activity_type",
 		"generic": 0,
 		"running": 1,
@@ -57,14 +222,14 @@ class FitConstants {
 		"all": 254,
 	};
 
-	static analog_watchface_layout = {
+export type analog_watchface_layoutT = {
 		__name: "analog_watchface_layout",
 		"minimal": 0,
 		"traditional": 1,
 		"modern": 2,
 	};
 
-	static ant_network = {
+export type ant_networkT = {
 		__name: "ant_network",
 		"public": 0,
 		"antplus": 1,
@@ -72,7 +237,7 @@ class FitConstants {
 		"private": 3,
 	};
 
-	static antplus_device_type = {
+export type antplus_device_typeT = {
 		__name: "antplus_device_type",
 		"antfs": 1,
 		"bike_power": 11,
@@ -101,7 +266,7 @@ class FitConstants {
 		"stride_speed_distance": 124,
 	};
 
-	static attitude_stage = {
+export type attitude_stageT = {
 		__name: "attitude_stage",
 		"failed": 0,
 		"aligning": 1,
@@ -109,7 +274,7 @@ class FitConstants {
 		"valid": 3,
 	};
 
-	static attitude_validity = {
+export type attitude_validityT = {
 		__name: "attitude_validity",
 		"track_angle_heading_valid": 0,
 		"pitch_valid": 0,
@@ -126,7 +291,7 @@ class FitConstants {
 		"magnetic_heading": 0,
 	};
 
-	static auto_activity_detect = {
+export type auto_activity_detectT = {
 		__name: "auto_activity_detect",
 		"none": 0,
 		"running": 0,
@@ -137,7 +302,7 @@ class FitConstants {
 		"sedentary": 0,
 	};
 
-	static auto_sync_frequency = {
+export type auto_sync_frequencyT = {
 		__name: "auto_sync_frequency",
 		"never": 0,
 		"occasionally": 1,
@@ -146,7 +311,7 @@ class FitConstants {
 		"remote": 4,
 	};
 
-	static autolap_trigger = {
+export type autolap_triggerT = {
 		__name: "autolap_trigger",
 		"time": 0,
 		"distance": 1,
@@ -157,7 +322,7 @@ class FitConstants {
 		"off": 6,
 	};
 
-	static autoscroll = {
+export type autoscrollT = {
 		__name: "autoscroll",
 		"none": 0,
 		"slow": 1,
@@ -165,7 +330,7 @@ class FitConstants {
 		"fast": 3,
 	};
 
-	static backlight_mode = {
+export type backlight_modeT = {
 		__name: "backlight_mode",
 		"off": 0,
 		"manual": 1,
@@ -176,12 +341,12 @@ class FitConstants {
 		"key_and_messages_and_smart_notifications": 6,
 	};
 
-	static backlight_timeout = {
+export type backlight_timeoutT = {
 		__name: "backlight_timeout",
 		"infinite": 0,
 	};
 
-	static battery_status = {
+export type battery_statusT = {
 		__name: "battery_status",
 		"new": 1,
 		"good": 2,
@@ -192,7 +357,7 @@ class FitConstants {
 		"unknown": 7,
 	};
 
-	static bench_press_exercise_name = {
+export type bench_press_exercise_nameT = {
 		__name: "bench_press_exercise_name",
 		"alternating_dumbbell_chest_press_on_swiss_ball": 0,
 		"barbell_bench_press": 1,
@@ -223,13 +388,13 @@ class FitConstants {
 		"alternating_dumbbell_chest_press": 26,
 	};
 
-	static bike_light_beam_angle_mode = {
+export type bike_light_beam_angle_modeT = {
 		__name: "bike_light_beam_angle_mode",
 		"manual": 0,
 		"auto": 1,
 	};
 
-	static bike_light_network_config_type = {
+export type bike_light_network_config_typeT = {
 		__name: "bike_light_network_config_type",
 		"auto": 0,
 		"individual": 4,
@@ -237,7 +402,7 @@ class FitConstants {
 		"trail": 6,
 	};
 
-	static body_location = {
+export type body_locationT = {
 		__name: "body_location",
 		"left_leg": 0,
 		"left_calf": 1,
@@ -281,7 +446,7 @@ class FitConstants {
 		"waist_right": 39,
 	};
 
-	static bp_status = {
+export type bp_statusT = {
 		__name: "bp_status",
 		"no_error": 0,
 		"error_incomplete_data": 1,
@@ -290,7 +455,7 @@ class FitConstants {
 		"error_irregular_heart_rate": 4,
 	};
 
-	static calf_raise_exercise_name = {
+export type calf_raise_exercise_nameT = {
 		__name: "calf_raise_exercise_name",
 		"3_way_calf_raise": 0,
 		"3_way_weighted_calf_raise": 1,
@@ -315,7 +480,7 @@ class FitConstants {
 		"standing_dumbbell_calf_raise": 20,
 	};
 
-	static camera_event_type = {
+export type camera_event_typeT = {
 		__name: "camera_event_type",
 		"video_start": 0,
 		"video_split": 1,
@@ -332,7 +497,7 @@ class FitConstants {
 		"video_second_stream_resume": 14,
 	};
 
-	static camera_orientation_type = {
+export type camera_orientation_typeT = {
 		__name: "camera_orientation_type",
 		"camera_orientation_0": 0,
 		"camera_orientation_90": 1,
@@ -340,7 +505,7 @@ class FitConstants {
 		"camera_orientation_270": 3,
 	};
 
-	static cardio_exercise_name = {
+export type cardio_exercise_nameT = {
 		__name: "cardio_exercise_name",
 		"bob_and_weave_circle": 0,
 		"weighted_bob_and_weave_circle": 1,
@@ -366,7 +531,7 @@ class FitConstants {
 		"weighted_triple_under": 21,
 	};
 
-	static carry_exercise_name = {
+export type carry_exercise_nameT = {
 		__name: "carry_exercise_name",
 		"bar_holds": 0,
 		"farmers_walk": 1,
@@ -375,13 +540,13 @@ class FitConstants {
 		"overhead_carry": 4,
 	};
 
-	static checksum = {
+export type checksumT = {
 		__name: "checksum",
 		"clear": 0,
 		"ok": 1,
 	};
 
-	static chop_exercise_name = {
+export type chop_exercise_nameT = {
 		__name: "chop_exercise_name",
 		"cable_pull_through": 0,
 		"cable_rotational_lift": 1,
@@ -408,14 +573,14 @@ class FitConstants {
 		"standing_stability_reverse_chop": 22,
 	};
 
-	static climb_pro_event = {
+export type climb_pro_eventT = {
 		__name: "climb_pro_event",
 		"approach": 0,
 		"start": 1,
 		"complete": 2,
 	};
 
-	static comm_timeout_type = {
+export type comm_timeout_typeT = {
 		__name: "comm_timeout_type",
 		"wildcard_pairing_timeout": 0,
 		"pairing_timeout": 1,
@@ -423,7 +588,7 @@ class FitConstants {
 		"connection_timeout": 3,
 	};
 
-	static connectivity_capabilities = {
+export type connectivity_capabilitiesT = {
 		__name: "connectivity_capabilities",
 		"bluetooth": 0,
 		"bluetooth_le": 0,
@@ -459,7 +624,7 @@ class FitConstants {
 		"instant_input": 0,
 	};
 
-	static core_exercise_name = {
+export type core_exercise_nameT = {
 		__name: "core_exercise_name",
 		"abs_jabs": 0,
 		"weighted_abs_jabs": 1,
@@ -536,7 +701,7 @@ class FitConstants {
 		"the_hundred": 72,
 	};
 
-	static course_capabilities = {
+export type course_capabilitiesT = {
 		__name: "course_capabilities",
 		"processed": 0,
 		"valid": 0,
@@ -551,7 +716,7 @@ class FitConstants {
 		"bikeway": 0,
 	};
 
-	static course_point = {
+export type course_pointT = {
 		__name: "course_point",
 		"generic": 0,
 		"summit": 1,
@@ -608,7 +773,7 @@ class FitConstants {
 		"info": 53,
 	};
 
-	static crunch_exercise_name = {
+export type crunch_exercise_nameT = {
 		__name: "crunch_exercise_name",
 		"bicycle_crunch": 0,
 		"cable_crunch": 1,
@@ -697,7 +862,7 @@ class FitConstants {
 		"straight_leg_crunch_with_ball": 84,
 	};
 
-	static curl_exercise_name = {
+export type curl_exercise_nameT = {
 		__name: "curl_exercise_name",
 		"alternating_dumbbell_biceps_curl": 0,
 		"alternating_dumbbell_biceps_curl_on_swiss_ball": 1,
@@ -745,18 +910,18 @@ class FitConstants {
 		"wide_grip_ez_bar_biceps_curl": 43,
 	};
 
-	static date_mode = {
+export type date_modeT = {
 		__name: "date_mode",
 		"day_month": 0,
 		"month_day": 1,
 	};
 
-	static date_time = {
+export type date_timeT = {
 		__name: "date_time",
 		"min": 0,
 	};
 
-	static day_of_week = {
+export type day_of_weekT = {
 		__name: "day_of_week",
 		"sunday": 0,
 		"monday": 1,
@@ -767,7 +932,7 @@ class FitConstants {
 		"saturday": 6,
 	};
 
-	static deadlift_exercise_name = {
+export type deadlift_exercise_nameT = {
 		__name: "deadlift_exercise_name",
 		"barbell_deadlift": 0,
 		"barbell_straight_leg_deadlift": 1,
@@ -790,33 +955,33 @@ class FitConstants {
 		"wide_grip_barbell_deadlift": 18,
 	};
 
-	static device_index = {
+export type device_indexT = {
 		__name: "device_index",
 		"creator": 0,
 	};
 
-	static digital_watchface_layout = {
+export type digital_watchface_layoutT = {
 		__name: "digital_watchface_layout",
 		"traditional": 0,
 		"modern": 1,
 		"bold": 2,
 	};
 
-	static display_heart = {
+export type display_heartT = {
 		__name: "display_heart",
 		"bpm": 0,
 		"max": 1,
 		"reserve": 2,
 	};
 
-	static display_measure = {
+export type display_measureT = {
 		__name: "display_measure",
 		"metric": 0,
 		"statute": 1,
 		"nautical": 2,
 	};
 
-	static display_orientation = {
+export type display_orientationT = {
 		__name: "display_orientation",
 		"auto": 0,
 		"portrait": 1,
@@ -825,7 +990,7 @@ class FitConstants {
 		"landscape_flipped": 4,
 	};
 
-	static display_position = {
+export type display_positionT = {
 		__name: "display_position",
 		"degree": 0,
 		"degree_minute": 1,
@@ -871,32 +1036,32 @@ class FitConstants {
 		"swedish_ref_99_grid": 41,
 	};
 
-	static display_power = {
+export type display_powerT = {
 		__name: "display_power",
 		"watts": 0,
 		"percent_ftp": 1,
 	};
 
-	static dive_alarm_type = {
+export type dive_alarm_typeT = {
 		__name: "dive_alarm_type",
 		"depth": 0,
 		"time": 1,
 	};
 
-	static dive_backlight_mode = {
+export type dive_backlight_modeT = {
 		__name: "dive_backlight_mode",
 		"at_depth": 0,
 		"always_on": 1,
 	};
 
-	static dive_gas_status = {
+export type dive_gas_statusT = {
 		__name: "dive_gas_status",
 		"disabled": 0,
 		"enabled": 1,
 		"backup_only": 2,
 	};
 
-	static event = {
+export type eventT = {
 		__name: "event",
 		"timer": 0,
 		"workout": 3,
@@ -937,7 +1102,7 @@ class FitConstants {
 		"radar_threat_alert": 75,
 	};
 
-	static event_type = {
+export type event_typeT = {
 		__name: "event_type",
 		"start": 0,
 		"stop": 1,
@@ -951,7 +1116,7 @@ class FitConstants {
 		"stop_disable_all": 9,
 	};
 
-	static exd_data_units = {
+export type exd_data_unitsT = {
 		__name: "exd_data_units",
 		"no_units": 0,
 		"laps": 1,
@@ -1005,7 +1170,7 @@ class FitConstants {
 		"eight_cardinal": 49,
 	};
 
-	static exd_descriptors = {
+export type exd_descriptorsT = {
 		__name: "exd_descriptors",
 		"bike_light_battery_status": 0,
 		"beam_angle_status": 1,
@@ -1106,7 +1271,7 @@ class FitConstants {
 		"vam": 96,
 	};
 
-	static exd_display_type = {
+export type exd_display_typeT = {
 		__name: "exd_display_type",
 		"numerical": 0,
 		"simple": 1,
@@ -1121,7 +1286,7 @@ class FitConstants {
 		"gauge": 10,
 	};
 
-	static exd_layout = {
+export type exd_layoutT = {
 		__name: "exd_layout",
 		"full_screen": 0,
 		"half_vertical": 1,
@@ -1134,7 +1299,7 @@ class FitConstants {
 		"dynamic": 8,
 	};
 
-	static exd_qualifiers = {
+export type exd_qualifiersT = {
 		__name: "exd_qualifiers",
 		"no_qualifier": 0,
 		"instantaneous": 1,
@@ -1182,7 +1347,7 @@ class FitConstants {
 		"zone_1": 250,
 	};
 
-	static exercise_category = {
+export type exercise_categoryT = {
 		__name: "exercise_category",
 		"bench_press": 0,
 		"calf_raise": 1,
@@ -1220,20 +1385,20 @@ class FitConstants {
 		"unknown": 65534,
 	};
 
-	static favero_product = {
+export type favero_productT = {
 		__name: "favero_product",
 		"assioma_uno": 10,
 		"assioma_duo": 12,
 	};
 
-	static file_flags = {
+export type file_flagsT = {
 		__name: "file_flags",
 		"read": 0,
 		"write": 0,
 		"erase": 0,
 	};
 
-	static fit_base_type = {
+export type fit_base_typeT = {
 		__name: "fit_base_type",
 		"enum": 0,
 		"sint8": 1,
@@ -1254,14 +1419,14 @@ class FitConstants {
 		"uint64z": 144,
 	};
 
-	static fit_base_unit = {
+export type fit_base_unitT = {
 		__name: "fit_base_unit",
 		"other": 0,
 		"kilogram": 1,
 		"pound": 2,
 	};
 
-	static fitness_equipment_state = {
+export type fitness_equipment_stateT = {
 		__name: "fitness_equipment_state",
 		"ready": 0,
 		"in_use": 1,
@@ -1269,7 +1434,7 @@ class FitConstants {
 		"unknown": 3,
 	};
 
-	static flye_exercise_name = {
+export type flye_exercise_nameT = {
 		__name: "flye_exercise_name",
 		"cable_crossover": 0,
 		"decline_dumbbell_flye": 1,
@@ -1283,7 +1448,7 @@ class FitConstants {
 		"hug_a_tree": 9,
 	};
 
-	static garmin_product = {
+export type garmin_productT = {
 		__name: "garmin_product",
 		"hrm1": 1,
 		"axh01": 2,
@@ -1672,14 +1837,14 @@ class FitConstants {
 		"connect": 65534,
 	};
 
-	static gender = {
+export type genderT = {
 		__name: "gender",
 		"female": 0,
 		"male": 1,
 		"unspecified": 2,
 	};
 
-	static goal = {
+export type goalT = {
 		__name: "goal",
 		"time": 0,
 		"distance": 1,
@@ -1690,7 +1855,7 @@ class FitConstants {
 		"active_minutes": 6,
 	};
 
-	static goal_recurrence = {
+export type goal_recurrenceT = {
 		__name: "goal_recurrence",
 		"off": 0,
 		"daily": 1,
@@ -1700,14 +1865,14 @@ class FitConstants {
 		"custom": 5,
 	};
 
-	static goal_source = {
+export type goal_sourceT = {
 		__name: "goal_source",
 		"auto": 0,
 		"community": 1,
 		"user": 2,
 	};
 
-	static hip_raise_exercise_name = {
+export type hip_raise_exercise_nameT = {
 		__name: "hip_raise_exercise_name",
 		"barbell_hip_thrust_on_floor": 0,
 		"barbell_hip_thrust_with_bench": 1,
@@ -1761,7 +1926,7 @@ class FitConstants {
 		"leg_lift_in_external_rotation": 49,
 	};
 
-	static hip_stability_exercise_name = {
+export type hip_stability_exercise_nameT = {
 		__name: "hip_stability_exercise_name",
 		"band_side_lying_leg_raise": 0,
 		"dead_bug": 1,
@@ -1799,27 +1964,27 @@ class FitConstants {
 		"weighted_supine_hip_internal_rotation": 33,
 	};
 
-	static hip_swing_exercise_name = {
+export type hip_swing_exercise_nameT = {
 		__name: "hip_swing_exercise_name",
 		"single_arm_kettlebell_swing": 0,
 		"single_arm_dumbbell_swing": 1,
 		"step_out_swing": 2,
 	};
 
-	static hr_type = {
+export type hr_typeT = {
 		__name: "hr_type",
 		"normal": 0,
 		"irregular": 1,
 	};
 
-	static hr_zone_calc = {
+export type hr_zone_calcT = {
 		__name: "hr_zone_calc",
 		"custom": 0,
 		"percent_max_hr": 1,
 		"percent_hrr": 2,
 	};
 
-	static hyperextension_exercise_name = {
+export type hyperextension_exercise_nameT = {
 		__name: "hyperextension_exercise_name",
 		"back_extension_with_opposite_arm_and_leg_reach": 0,
 		"weighted_back_extension_with_opposite_arm_and_leg_reach": 1,
@@ -1863,7 +2028,7 @@ class FitConstants {
 		"supine_floor_barre": 39,
 	};
 
-	static intensity = {
+export type intensityT = {
 		__name: "intensity",
 		"active": 0,
 		"rest": 1,
@@ -1874,7 +2039,7 @@ class FitConstants {
 		"other": 6,
 	};
 
-	static language = {
+export type languageT = {
 		__name: "language",
 		"english": 0,
 		"french": 1,
@@ -1917,7 +2082,7 @@ class FitConstants {
 		"custom": 254,
 	};
 
-	static language_bits_0 = {
+export type language_bits_0T = {
 		__name: "language_bits_0",
 		"english": 0,
 		"french": 0,
@@ -1929,7 +2094,7 @@ class FitConstants {
 		"danish": 0,
 	};
 
-	static language_bits_1 = {
+export type language_bits_1T = {
 		__name: "language_bits_1",
 		"dutch": 0,
 		"finnish": 0,
@@ -1941,7 +2106,7 @@ class FitConstants {
 		"slovakian": 0,
 	};
 
-	static language_bits_2 = {
+export type language_bits_2T = {
 		__name: "language_bits_2",
 		"slovenian": 0,
 		"swedish": 0,
@@ -1953,7 +2118,7 @@ class FitConstants {
 		"farsi": 0,
 	};
 
-	static language_bits_3 = {
+export type language_bits_3T = {
 		__name: "language_bits_3",
 		"bulgarian": 0,
 		"romanian": 0,
@@ -1965,7 +2130,7 @@ class FitConstants {
 		"hebrew": 0,
 	};
 
-	static language_bits_4 = {
+export type language_bits_4T = {
 		__name: "language_bits_4",
 		"brazilian_portuguese": 0,
 		"indonesian": 0,
@@ -1975,7 +2140,7 @@ class FitConstants {
 		"mongolian": 0,
 	};
 
-	static lap_trigger = {
+export type lap_triggerT = {
 		__name: "lap_trigger",
 		"manual": 0,
 		"time": 1,
@@ -1988,7 +2153,7 @@ class FitConstants {
 		"fitness_equipment": 8,
 	};
 
-	static lateral_raise_exercise_name = {
+export type lateral_raise_exercise_nameT = {
 		__name: "lateral_raise_exercise_name",
 		"45_degree_cable_external_rotation": 0,
 		"alternating_lateral_raise_with_static_hold": 1,
@@ -2026,19 +2191,19 @@ class FitConstants {
 		"shaving_the_head": 33,
 	};
 
-	static left_right_balance = {
+export type left_right_balanceT = {
 		__name: "left_right_balance",
 		"mask": 0,
 		"right": 0,
 	};
 
-	static left_right_balance_100 = {
+export type left_right_balance_100T = {
 		__name: "left_right_balance_100",
 		"mask": 0,
 		"right": 0,
 	};
 
-	static leg_curl_exercise_name = {
+export type leg_curl_exercise_nameT = {
 		__name: "leg_curl_exercise_name",
 		"leg_curl": 0,
 		"weighted_leg_curl": 1,
@@ -2054,7 +2219,7 @@ class FitConstants {
 		"zercher_good_morning": 11,
 	};
 
-	static leg_raise_exercise_name = {
+export type leg_raise_exercise_nameT = {
 		__name: "leg_raise_exercise_name",
 		"hanging_knee_raise": 0,
 		"hanging_leg_raise": 1,
@@ -2080,18 +2245,18 @@ class FitConstants {
 		"weighted_lateral_stepover": 21,
 	};
 
-	static length_type = {
+export type length_typeT = {
 		__name: "length_type",
 		"idle": 0,
 		"active": 1,
 	};
 
-	static local_date_time = {
+export type local_date_timeT = {
 		__name: "local_date_time",
 		"min": 0,
 	};
 
-	static lunge_exercise_name = {
+export type lunge_exercise_nameT = {
 		__name: "lunge_exercise_name",
 		"overhead_lunge": 0,
 		"lunge_matrix": 1,
@@ -2176,7 +2341,7 @@ class FitConstants {
 		"wide_grip_overhead_barbell_split_squat": 80,
 	};
 
-	static manufacturer = {
+export type manufacturerT = {
 		__name: "manufacturer",
 		"vdo": 287,
 		"magneticdays": 288,
@@ -2384,14 +2549,14 @@ class FitConstants {
 		"omata": 286,
 	};
 
-	static mesg_count = {
+export type mesg_countT = {
 		__name: "mesg_count",
 		"num_per_file": 0,
 		"max_per_file": 1,
 		"max_per_file_type": 2,
 	};
 
-	static mesg_num = {
+export type mesg_numT = {
 		__name: "mesg_num",
 		"barometer_data": 209,
 		"one_d_sensor_calibration": 210,
@@ -2486,14 +2651,14 @@ class FitConstants {
 		"magnetometer_data": 208,
 	};
 
-	static message_index = {
+export type message_indexT = {
 		__name: "message_index",
 		"selected": 0,
 		"reserved": 0,
 		"mask": 0,
 	};
 
-	static olympic_lift_exercise_name = {
+export type olympic_lift_exercise_nameT = {
 		__name: "olympic_lift_exercise_name",
 		"barbell_hang_power_clean": 0,
 		"barbell_hang_squat_clean": 1,
@@ -2518,7 +2683,7 @@ class FitConstants {
 		"squat_clean_and_jerk": 20,
 	};
 
-	static plank_exercise_name = {
+export type plank_exercise_nameT = {
 		__name: "plank_exercise_name",
 		"45_degree_plank": 0,
 		"weighted_45_degree_plank": 1,
@@ -2657,7 +2822,7 @@ class FitConstants {
 		"reverse_plank_with_leg_pull": 134,
 	};
 
-	static plyo_exercise_name = {
+export type plyo_exercise_nameT = {
 		__name: "plyo_exercise_name",
 		"alternating_jump_lunge": 0,
 		"weighted_alternating_jump_lunge": 1,
@@ -2694,7 +2859,7 @@ class FitConstants {
 		"weighted_squat_jumps_in_and_out": 32,
 	};
 
-	static power_phase_type = {
+export type power_phase_typeT = {
 		__name: "power_phase_type",
 		"power_phase_start_angle": 0,
 		"power_phase_end_angle": 1,
@@ -2702,7 +2867,7 @@ class FitConstants {
 		"power_phase_center": 3,
 	};
 
-	static pull_up_exercise_name = {
+export type pull_up_exercise_nameT = {
 		__name: "pull_up_exercise_name",
 		"banded_pull_ups": 0,
 		"30_degree_lat_pulldown": 1,
@@ -2745,7 +2910,7 @@ class FitConstants {
 		"pull_up": 38,
 	};
 
-	static push_up_exercise_name = {
+export type push_up_exercise_nameT = {
 		__name: "push_up_exercise_name",
 		"chest_press_with_band": 0,
 		"alternating_staggered_push_up": 1,
@@ -2828,13 +2993,13 @@ class FitConstants {
 		"pilates_pushup": 78,
 	};
 
-	static pwr_zone_calc = {
+export type pwr_zone_calcT = {
 		__name: "pwr_zone_calc",
 		"custom": 0,
 		"percent_ftp": 1,
 	};
 
-	static radar_threat_level_type = {
+export type radar_threat_level_typeT = {
 		__name: "radar_threat_level_type",
 		"threat_unknown": 0,
 		"threat_none": 1,
@@ -2842,7 +3007,7 @@ class FitConstants {
 		"threat_approaching_fast": 3,
 	};
 
-	static rider_position_type = {
+export type rider_position_typeT = {
 		__name: "rider_position_type",
 		"seated": 0,
 		"standing": 1,
@@ -2850,7 +3015,7 @@ class FitConstants {
 		"transition_to_standing": 3,
 	};
 
-	static row_exercise_name = {
+export type row_exercise_nameT = {
 		__name: "row_exercise_name",
 		"barbell_straight_leg_deadlift_to_row": 0,
 		"cable_row_standing": 1,
@@ -2888,7 +3053,7 @@ class FitConstants {
 		"wide_grip_seated_cable_row": 33,
 	};
 
-	static run_exercise_name = {
+export type run_exercise_nameT = {
 		__name: "run_exercise_name",
 		"run": 0,
 		"walk": 1,
@@ -2896,26 +3061,26 @@ class FitConstants {
 		"sprint": 3,
 	};
 
-	static schedule = {
+export type scheduleT = {
 		__name: "schedule",
 		"workout": 0,
 		"course": 1,
 	};
 
-	static segment_delete_status = {
+export type segment_delete_statusT = {
 		__name: "segment_delete_status",
 		"do_not_delete": 0,
 		"delete_one": 1,
 		"delete_all": 2,
 	};
 
-	static segment_lap_status = {
+export type segment_lap_statusT = {
 		__name: "segment_lap_status",
 		"end": 0,
 		"fail": 1,
 	};
 
-	static segment_leaderboard_type = {
+export type segment_leaderboard_typeT = {
 		__name: "segment_leaderboard_type",
 		"overall": 0,
 		"personal_best": 1,
@@ -2930,13 +3095,13 @@ class FitConstants {
 		"club_leader": 10,
 	};
 
-	static segment_selection_type = {
+export type segment_selection_typeT = {
 		__name: "segment_selection_type",
 		"starred": 0,
 		"suggested": 1,
 	};
 
-	static sensor_type = {
+export type sensor_typeT = {
 		__name: "sensor_type",
 		"accelerometer": 0,
 		"gyroscope": 1,
@@ -2944,7 +3109,7 @@ class FitConstants {
 		"barometer": 3,
 	};
 
-	static session_trigger = {
+export type session_triggerT = {
 		__name: "session_trigger",
 		"activity_end": 0,
 		"manual": 1,
@@ -2952,13 +3117,13 @@ class FitConstants {
 		"fitness_equipment": 3,
 	};
 
-	static set_type = {
+export type set_typeT = {
 		__name: "set_type",
 		"rest": 0,
 		"active": 1,
 	};
 
-	static shoulder_press_exercise_name = {
+export type shoulder_press_exercise_nameT = {
 		__name: "shoulder_press_exercise_name",
 		"alternating_dumbbell_shoulder_press": 0,
 		"arnold_press": 1,
@@ -2986,7 +3151,7 @@ class FitConstants {
 		"weight_plate_front_raise": 23,
 	};
 
-	static shoulder_stability_exercise_name = {
+export type shoulder_stability_exercise_nameT = {
 		__name: "shoulder_stability_exercise_name",
 		"90_degree_cable_external_rotation": 0,
 		"band_external_rotation": 1,
@@ -3023,7 +3188,7 @@ class FitConstants {
 		"weighted_swiss_ball_y_raise": 32,
 	};
 
-	static shrug_exercise_name = {
+export type shrug_exercise_nameT = {
 		__name: "shrug_exercise_name",
 		"barbell_jump_shrug": 0,
 		"barbell_shrug": 1,
@@ -3044,13 +3209,13 @@ class FitConstants {
 		"wide_grip_jump_shrug": 16,
 	};
 
-	static side = {
+export type sideT = {
 		__name: "side",
 		"right": 0,
 		"left": 1,
 	};
 
-	static sit_up_exercise_name = {
+export type sit_up_exercise_nameT = {
 		__name: "sit_up_exercise_name",
 		"alternating_sit_up": 0,
 		"weighted_alternating_sit_up": 1,
@@ -3092,7 +3257,7 @@ class FitConstants {
 		"sit_up": 37,
 	};
 
-	static source_type = {
+export type source_typeT = {
 		__name: "source_type",
 		"ant": 0,
 		"antplus": 1,
@@ -3102,7 +3267,7 @@ class FitConstants {
 		"local": 5,
 	};
 
-	static sport = {
+export type sportT = {
 		__name: "sport",
 		"generic": 0,
 		"running": 1,
@@ -3157,7 +3322,7 @@ class FitConstants {
 		"all": 254,
 	};
 
-	static sport_bits_0 = {
+export type sport_bits_0T = {
 		__name: "sport_bits_0",
 		"generic": 0,
 		"running": 0,
@@ -3169,7 +3334,7 @@ class FitConstants {
 		"soccer": 0,
 	};
 
-	static sport_bits_1 = {
+export type sport_bits_1T = {
 		__name: "sport_bits_1",
 		"tennis": 0,
 		"american_football": 0,
@@ -3181,7 +3346,7 @@ class FitConstants {
 		"rowing": 0,
 	};
 
-	static sport_bits_2 = {
+export type sport_bits_2T = {
 		__name: "sport_bits_2",
 		"mountaineering": 0,
 		"hiking": 0,
@@ -3193,7 +3358,7 @@ class FitConstants {
 		"boating": 0,
 	};
 
-	static sport_bits_3 = {
+export type sport_bits_3T = {
 		__name: "sport_bits_3",
 		"driving": 0,
 		"golf": 0,
@@ -3205,7 +3370,7 @@ class FitConstants {
 		"rock_climbing": 0,
 	};
 
-	static sport_bits_4 = {
+export type sport_bits_4T = {
 		__name: "sport_bits_4",
 		"sailing": 0,
 		"ice_skating": 0,
@@ -3217,7 +3382,7 @@ class FitConstants {
 		"wakeboarding": 0,
 	};
 
-	static sport_bits_5 = {
+export type sport_bits_5T = {
 		__name: "sport_bits_5",
 		"water_skiing": 0,
 		"kayaking": 0,
@@ -3229,12 +3394,12 @@ class FitConstants {
 		"boxing": 0,
 	};
 
-	static sport_bits_6 = {
+export type sport_bits_6T = {
 		__name: "sport_bits_6",
 		"floor_climbing": 0,
 	};
 
-	static sport_event = {
+export type sport_eventT = {
 		__name: "sport_event",
 		"uncategorized": 0,
 		"geocaching": 1,
@@ -3247,7 +3412,7 @@ class FitConstants {
 		"touring": 8,
 	};
 
-	static squat_exercise_name = {
+export type squat_exercise_nameT = {
 		__name: "squat_exercise_name",
 		"leg_press": 0,
 		"back_squat_with_body_bar": 1,
@@ -3343,7 +3508,7 @@ class FitConstants {
 		"releve_straight_leg_and_knee_bent_with_one_leg_variation": 91,
 	};
 
-	static stroke_type = {
+export type stroke_typeT = {
 		__name: "stroke_type",
 		"no_event": 0,
 		"other": 1,
@@ -3353,7 +3518,7 @@ class FitConstants {
 		"smash": 5,
 	};
 
-	static sub_sport = {
+export type sub_sportT = {
 		__name: "sub_sport",
 		"generic": 0,
 		"treadmill": 1,
@@ -3423,7 +3588,7 @@ class FitConstants {
 		"all": 254,
 	};
 
-	static supported_exd_screen_layouts = {
+export type supported_exd_screen_layoutsT = {
 		__name: "supported_exd_screen_layouts",
 		"full_screen": 0,
 		"half_vertical": 0,
@@ -3435,7 +3600,7 @@ class FitConstants {
 		"half_horizontal_top_split": 0,
 	};
 
-	static swim_stroke = {
+export type swim_strokeT = {
 		__name: "swim_stroke",
 		"freestyle": 0,
 		"backstroke": 1,
@@ -3446,21 +3611,21 @@ class FitConstants {
 		"im": 6,
 	};
 
-	static switch = {
+export type switchT = {
 		__name: "switch",
 		"off": 0,
 		"on": 1,
 		"auto": 2,
 	};
 
-	static tap_sensitivity = {
+export type tap_sensitivityT = {
 		__name: "tap_sensitivity",
 		"high": 0,
 		"medium": 1,
 		"low": 2,
 	};
 
-	static time_mode = {
+export type time_modeT = {
 		__name: "time_mode",
 		"hour12": 0,
 		"hour24": 1,
@@ -3470,7 +3635,7 @@ class FitConstants {
 		"utc": 5,
 	};
 
-	static time_zone = {
+export type time_zoneT = {
 		__name: "time_zone",
 		"almaty": 0,
 		"bangkok": 1,
@@ -3580,19 +3745,19 @@ class FitConstants {
 		"automatic": 254,
 	};
 
-	static timer_trigger = {
+export type timer_triggerT = {
 		__name: "timer_trigger",
 		"manual": 0,
 		"auto": 1,
 		"fitness_equipment": 2,
 	};
 
-	static tissue_model_type = {
+export type tissue_model_typeT = {
 		__name: "tissue_model_type",
 		"zhl_16c": 0,
 	};
 
-	static tone = {
+export type toneT = {
 		__name: "tone",
 		"off": 0,
 		"tone": 1,
@@ -3600,7 +3765,7 @@ class FitConstants {
 		"tone_and_vibrate": 3,
 	};
 
-	static total_body_exercise_name = {
+export type total_body_exercise_nameT = {
 		__name: "total_body_exercise_name",
 		"burpee": 0,
 		"weighted_burpee": 1,
@@ -3617,7 +3782,7 @@ class FitConstants {
 		"weighted_standing_t_rotation_balance": 12,
 	};
 
-	static triceps_extension_exercise_name = {
+export type triceps_extension_exercise_nameT = {
 		__name: "triceps_extension_exercise_name",
 		"bench_dip": 0,
 		"weighted_bench_dip": 1,
@@ -3662,7 +3827,7 @@ class FitConstants {
 		"weighted_dip": 40,
 	};
 
-	static turn_type = {
+export type turn_typeT = {
 		__name: "turn_type",
 		"arriving_idx": 0,
 		"arriving_left_idx": 1,
@@ -3704,7 +3869,7 @@ class FitConstants {
 		"icon_idx_cnt": 37,
 	};
 
-	static user_local_id = {
+export type user_local_idT = {
 		__name: "user_local_id",
 		"local_min": 0,
 		"local_max": 0,
@@ -3714,7 +3879,7 @@ class FitConstants {
 		"portable_max": 0,
 	};
 
-	static warm_up_exercise_name = {
+export type warm_up_exercise_nameT = {
 		__name: "warm_up_exercise_name",
 		"quadruped_rocking": 0,
 		"neck_tilts": 1,
@@ -3749,7 +3914,7 @@ class FitConstants {
 		"walkout_from_push_up_position": 30,
 	};
 
-	static watchface_mode = {
+export type watchface_modeT = {
 		__name: "watchface_mode",
 		"digital": 0,
 		"analog": 1,
@@ -3757,7 +3922,7 @@ class FitConstants {
 		"disabled": 3,
 	};
 
-	static water_type = {
+export type water_typeT = {
 		__name: "water_type",
 		"fresh": 0,
 		"salt": 1,
@@ -3765,7 +3930,7 @@ class FitConstants {
 		"custom": 3,
 	};
 
-	static weather_report = {
+export type weather_reportT = {
 		__name: "weather_report",
 		"current": 0,
 		"forecast": 1,
@@ -3773,7 +3938,7 @@ class FitConstants {
 		"daily_forecast": 2,
 	};
 
-	static weather_severe_type = {
+export type weather_severe_typeT = {
 		__name: "weather_severe_type",
 		"unspecified": 0,
 		"tornado": 1,
@@ -3862,7 +4027,7 @@ class FitConstants {
 		"special_weather": 84,
 	};
 
-	static weather_severity = {
+export type weather_severityT = {
 		__name: "weather_severity",
 		"unknown": 0,
 		"warning": 1,
@@ -3871,7 +4036,7 @@ class FitConstants {
 		"statement": 4,
 	};
 
-	static weather_status = {
+export type weather_statusT = {
 		__name: "weather_status",
 		"clear": 0,
 		"partly_cloudy": 1,
@@ -3896,12 +4061,12 @@ class FitConstants {
 		"cloudy": 22,
 	};
 
-	static weight = {
+export type weightT = {
 		__name: "weight",
 		"calculating": 0,
 	};
 
-	static wkt_step_duration = {
+export type wkt_step_durationT = {
 		__name: "wkt_step_duration",
 		"time": 0,
 		"distance": 1,
@@ -3936,7 +4101,7 @@ class FitConstants {
 		"time_only": 31,
 	};
 
-	static wkt_step_target = {
+export type wkt_step_targetT = {
 		__name: "wkt_step_target",
 		"speed": 0,
 		"heart_rate": 1,
@@ -3954,7 +4119,7 @@ class FitConstants {
 		"heart_rate_lap": 13,
 	};
 
-	static workout_capabilities = {
+export type workout_capabilitiesT = {
 		__name: "workout_capabilities",
 		"interval": 0,
 		"custom": 0,
@@ -3972,7 +4137,7 @@ class FitConstants {
 		"protected": 0,
 	};
 
-	static workout_equipment = {
+export type workout_equipmentT = {
 		__name: "workout_equipment",
 		"none": 0,
 		"swim_fins": 1,
@@ -3982,17 +4147,17 @@ class FitConstants {
 		"swim_snorkel": 5,
 	};
 
-	static workout_hr = {
+export type workout_hrT = {
 		__name: "workout_hr",
 		"bpm_offset": 100,
 	};
 
-	static workout_power = {
+export type workout_powerT = {
 		__name: "workout_power",
 		"watts_offset": 1000,
 	};
 
-	static file = {
+export type fileT = {
 		__name: "file",
 		"totals": 10,
 		"goals": 11,
@@ -4016,171 +4181,170 @@ class FitConstants {
 		"weight": 9,
 	};
 
-	static constant_types = {
-		activity: ValueType.enum,
-		activity_class: ValueType.enum,
-		activity_level: ValueType.enum,
-		activity_subtype: ValueType.enum,
-		activity_type: ValueType.enum,
-		analog_watchface_layout: ValueType.enum,
-		ant_network: ValueType.enum,
-		antplus_device_type: ValueType.uint8,
-		attitude_stage: ValueType.enum,
-		attitude_validity: ValueType.uint16,
-		auto_activity_detect: ValueType.uint32,
-		auto_sync_frequency: ValueType.enum,
-		autolap_trigger: ValueType.enum,
-		autoscroll: ValueType.enum,
-		backlight_mode: ValueType.enum,
-		backlight_timeout: ValueType.uint8,
-		battery_status: ValueType.uint8,
-		bench_press_exercise_name: ValueType.uint16,
-		bike_light_beam_angle_mode: ValueType.uint8,
-		bike_light_network_config_type: ValueType.enum,
-		body_location: ValueType.enum,
-		bp_status: ValueType.enum,
-		calf_raise_exercise_name: ValueType.uint16,
-		camera_event_type: ValueType.enum,
-		camera_orientation_type: ValueType.enum,
-		cardio_exercise_name: ValueType.uint16,
-		carry_exercise_name: ValueType.uint16,
-		checksum: ValueType.uint8,
-		chop_exercise_name: ValueType.uint16,
-		climb_pro_event: ValueType.enum,
-		comm_timeout_type: ValueType.uint16,
-		connectivity_capabilities: ValueType.uint32z,
-		core_exercise_name: ValueType.uint16,
-		course_capabilities: ValueType.uint32z,
-		course_point: ValueType.enum,
-		crunch_exercise_name: ValueType.uint16,
-		curl_exercise_name: ValueType.uint16,
-		date_mode: ValueType.enum,
-		date_time: ValueType.uint32,
-		day_of_week: ValueType.enum,
-		deadlift_exercise_name: ValueType.uint16,
-		device_index: ValueType.uint8,
-		digital_watchface_layout: ValueType.enum,
-		display_heart: ValueType.enum,
-		display_measure: ValueType.enum,
-		display_orientation: ValueType.enum,
-		display_position: ValueType.enum,
-		display_power: ValueType.enum,
-		dive_alarm_type: ValueType.enum,
-		dive_backlight_mode: ValueType.enum,
-		dive_gas_status: ValueType.enum,
-		event: ValueType.enum,
-		event_type: ValueType.enum,
-		exd_data_units: ValueType.enum,
-		exd_descriptors: ValueType.enum,
-		exd_display_type: ValueType.enum,
-		exd_layout: ValueType.enum,
-		exd_qualifiers: ValueType.enum,
-		exercise_category: ValueType.uint16,
-		favero_product: ValueType.uint16,
-		file_flags: ValueType.uint8z,
-		fit_base_type: ValueType.uint8,
-		fit_base_unit: ValueType.uint16,
-		fitness_equipment_state: ValueType.enum,
-		flye_exercise_name: ValueType.uint16,
-		garmin_product: ValueType.uint16,
-		gender: ValueType.enum,
-		goal: ValueType.enum,
-		goal_recurrence: ValueType.enum,
-		goal_source: ValueType.enum,
-		hip_raise_exercise_name: ValueType.uint16,
-		hip_stability_exercise_name: ValueType.uint16,
-		hip_swing_exercise_name: ValueType.uint16,
-		hr_type: ValueType.enum,
-		hr_zone_calc: ValueType.enum,
-		hyperextension_exercise_name: ValueType.uint16,
-		intensity: ValueType.enum,
-		language: ValueType.enum,
-		language_bits_0: ValueType.uint8z,
-		language_bits_1: ValueType.uint8z,
-		language_bits_2: ValueType.uint8z,
-		language_bits_3: ValueType.uint8z,
-		language_bits_4: ValueType.uint8z,
-		lap_trigger: ValueType.enum,
-		lateral_raise_exercise_name: ValueType.uint16,
-		left_right_balance: ValueType.uint8,
-		left_right_balance_100: ValueType.uint16,
-		leg_curl_exercise_name: ValueType.uint16,
-		leg_raise_exercise_name: ValueType.uint16,
-		length_type: ValueType.enum,
-		local_date_time: ValueType.uint32,
-		local_device_type: ValueType.uint8,
-		localtime_into_day: ValueType.uint32,
-		lunge_exercise_name: ValueType.uint16,
-		manufacturer: ValueType.uint16,
-		mesg_count: ValueType.enum,
-		mesg_num: ValueType.uint16,
-		message_index: ValueType.uint16,
-		olympic_lift_exercise_name: ValueType.uint16,
-		plank_exercise_name: ValueType.uint16,
-		plyo_exercise_name: ValueType.uint16,
-		power_phase_type: ValueType.enum,
-		pull_up_exercise_name: ValueType.uint16,
-		push_up_exercise_name: ValueType.uint16,
-		pwr_zone_calc: ValueType.enum,
-		radar_threat_level_type: ValueType.enum,
-		rider_position_type: ValueType.enum,
-		row_exercise_name: ValueType.uint16,
-		run_exercise_name: ValueType.uint16,
-		schedule: ValueType.enum,
-		segment_delete_status: ValueType.enum,
-		segment_lap_status: ValueType.enum,
-		segment_leaderboard_type: ValueType.enum,
-		segment_selection_type: ValueType.enum,
-		sensor_type: ValueType.enum,
-		session_trigger: ValueType.enum,
-		set_type: ValueType.uint8,
-		shoulder_press_exercise_name: ValueType.uint16,
-		shoulder_stability_exercise_name: ValueType.uint16,
-		shrug_exercise_name: ValueType.uint16,
-		side: ValueType.enum,
-		sit_up_exercise_name: ValueType.uint16,
-		source_type: ValueType.enum,
-		sport: ValueType.enum,
-		sport_bits_0: ValueType.uint8z,
-		sport_bits_1: ValueType.uint8z,
-		sport_bits_2: ValueType.uint8z,
-		sport_bits_3: ValueType.uint8z,
-		sport_bits_4: ValueType.uint8z,
-		sport_bits_5: ValueType.uint8z,
-		sport_bits_6: ValueType.uint8z,
-		sport_event: ValueType.enum,
-		squat_exercise_name: ValueType.uint16,
-		stroke_type: ValueType.enum,
-		sub_sport: ValueType.enum,
-		supported_exd_screen_layouts: ValueType.uint32z,
-		swim_stroke: ValueType.enum,
-		switch: ValueType.enum,
-		tap_sensitivity: ValueType.enum,
-		time_into_day: ValueType.uint32,
-		time_mode: ValueType.enum,
-		time_zone: ValueType.enum,
-		timer_trigger: ValueType.enum,
-		tissue_model_type: ValueType.enum,
-		tone: ValueType.enum,
-		total_body_exercise_name: ValueType.uint16,
-		triceps_extension_exercise_name: ValueType.uint16,
-		turn_type: ValueType.enum,
-		user_local_id: ValueType.uint16,
-		warm_up_exercise_name: ValueType.uint16,
-		watchface_mode: ValueType.enum,
-		water_type: ValueType.enum,
-		weather_report: ValueType.enum,
-		weather_severe_type: ValueType.enum,
-		weather_severity: ValueType.enum,
-		weather_status: ValueType.enum,
-		weight: ValueType.uint16,
-		wkt_step_duration: ValueType.enum,
-		wkt_step_target: ValueType.enum,
-		workout_capabilities: ValueType.uint32z,
-		workout_equipment: ValueType.enum,
-		workout_hr: ValueType.uint32,
-		workout_power: ValueType.uint32,
-		file: ValueType.enum,
+export type constant_typesT = {
+		activity: ValueTypeT['enum'],
+		activity_class: ValueTypeT['enum'],
+		activity_level: ValueTypeT['enum'],
+		activity_subtype: ValueTypeT['enum'],
+		activity_type: ValueTypeT['enum'],
+		analog_watchface_layout: ValueTypeT['enum'],
+		ant_network: ValueTypeT['enum'],
+		antplus_device_type: ValueTypeT['uint8'],
+		attitude_stage: ValueTypeT['enum'],
+		attitude_validity: ValueTypeT['uint16'],
+		auto_activity_detect: ValueTypeT['uint32'],
+		auto_sync_frequency: ValueTypeT['enum'],
+		autolap_trigger: ValueTypeT['enum'],
+		autoscroll: ValueTypeT['enum'],
+		backlight_mode: ValueTypeT['enum'],
+		backlight_timeout: ValueTypeT['uint8'],
+		battery_status: ValueTypeT['uint8'],
+		bench_press_exercise_name: ValueTypeT['uint16'],
+		bike_light_beam_angle_mode: ValueTypeT['uint8'],
+		bike_light_network_config_type: ValueTypeT['enum'],
+		body_location: ValueTypeT['enum'],
+		bp_status: ValueTypeT['enum'],
+		calf_raise_exercise_name: ValueTypeT['uint16'],
+		camera_event_type: ValueTypeT['enum'],
+		camera_orientation_type: ValueTypeT['enum'],
+		cardio_exercise_name: ValueTypeT['uint16'],
+		carry_exercise_name: ValueTypeT['uint16'],
+		checksum: ValueTypeT['uint8'],
+		chop_exercise_name: ValueTypeT['uint16'],
+		climb_pro_event: ValueTypeT['enum'],
+		comm_timeout_type: ValueTypeT['uint16'],
+		connectivity_capabilities: ValueTypeT['uint32z'],
+		core_exercise_name: ValueTypeT['uint16'],
+		course_capabilities: ValueTypeT['uint32z'],
+		course_point: ValueTypeT['enum'],
+		crunch_exercise_name: ValueTypeT['uint16'],
+		curl_exercise_name: ValueTypeT['uint16'],
+		date_mode: ValueTypeT['enum'],
+		date_time: ValueTypeT['uint32'],
+		day_of_week: ValueTypeT['enum'],
+		deadlift_exercise_name: ValueTypeT['uint16'],
+		device_index: ValueTypeT['uint8'],
+		digital_watchface_layout: ValueTypeT['enum'],
+		display_heart: ValueTypeT['enum'],
+		display_measure: ValueTypeT['enum'],
+		display_orientation: ValueTypeT['enum'],
+		display_position: ValueTypeT['enum'],
+		display_power: ValueTypeT['enum'],
+		dive_alarm_type: ValueTypeT['enum'],
+		dive_backlight_mode: ValueTypeT['enum'],
+		dive_gas_status: ValueTypeT['enum'],
+		event: ValueTypeT['enum'],
+		event_type: ValueTypeT['enum'],
+		exd_data_units: ValueTypeT['enum'],
+		exd_descriptors: ValueTypeT['enum'],
+		exd_display_type: ValueTypeT['enum'],
+		exd_layout: ValueTypeT['enum'],
+		exd_qualifiers: ValueTypeT['enum'],
+		exercise_category: ValueTypeT['uint16'],
+		favero_product: ValueTypeT['uint16'],
+		file_flags: ValueTypeT['uint8z'],
+		fit_base_type: ValueTypeT['uint8'],
+		fit_base_unit: ValueTypeT['uint16'],
+		fitness_equipment_state: ValueTypeT['enum'],
+		flye_exercise_name: ValueTypeT['uint16'],
+		garmin_product: ValueTypeT['uint16'],
+		gender: ValueTypeT['enum'],
+		goal: ValueTypeT['enum'],
+		goal_recurrence: ValueTypeT['enum'],
+		goal_source: ValueTypeT['enum'],
+		hip_raise_exercise_name: ValueTypeT['uint16'],
+		hip_stability_exercise_name: ValueTypeT['uint16'],
+		hip_swing_exercise_name: ValueTypeT['uint16'],
+		hr_type: ValueTypeT['enum'],
+		hr_zone_calc: ValueTypeT['enum'],
+		hyperextension_exercise_name: ValueTypeT['uint16'],
+		intensity: ValueTypeT['enum'],
+		language: ValueTypeT['enum'],
+		language_bits_0: ValueTypeT['uint8z'],
+		language_bits_1: ValueTypeT['uint8z'],
+		language_bits_2: ValueTypeT['uint8z'],
+		language_bits_3: ValueTypeT['uint8z'],
+		language_bits_4: ValueTypeT['uint8z'],
+		lap_trigger: ValueTypeT['enum'],
+		lateral_raise_exercise_name: ValueTypeT['uint16'],
+		left_right_balance: ValueTypeT['uint8'],
+		left_right_balance_100: ValueTypeT['uint16'],
+		leg_curl_exercise_name: ValueTypeT['uint16'],
+		leg_raise_exercise_name: ValueTypeT['uint16'],
+		length_type: ValueTypeT['enum'],
+		local_date_time: ValueTypeT['uint32'],
+		local_device_type: ValueTypeT['uint8'],
+		localtime_into_day: ValueTypeT['uint32'],
+		lunge_exercise_name: ValueTypeT['uint16'],
+		manufacturer: ValueTypeT['uint16'],
+		mesg_count: ValueTypeT['enum'],
+		mesg_num: ValueTypeT['uint16'],
+		message_index: ValueTypeT['uint16'],
+		olympic_lift_exercise_name: ValueTypeT['uint16'],
+		plank_exercise_name: ValueTypeT['uint16'],
+		plyo_exercise_name: ValueTypeT['uint16'],
+		power_phase_type: ValueTypeT['enum'],
+		pull_up_exercise_name: ValueTypeT['uint16'],
+		push_up_exercise_name: ValueTypeT['uint16'],
+		pwr_zone_calc: ValueTypeT['enum'],
+		radar_threat_level_type: ValueTypeT['enum'],
+		rider_position_type: ValueTypeT['enum'],
+		row_exercise_name: ValueTypeT['uint16'],
+		run_exercise_name: ValueTypeT['uint16'],
+		schedule: ValueTypeT['enum'],
+		segment_delete_status: ValueTypeT['enum'],
+		segment_lap_status: ValueTypeT['enum'],
+		segment_leaderboard_type: ValueTypeT['enum'],
+		segment_selection_type: ValueTypeT['enum'],
+		sensor_type: ValueTypeT['enum'],
+		session_trigger: ValueTypeT['enum'],
+		set_type: ValueTypeT['uint8'],
+		shoulder_press_exercise_name: ValueTypeT['uint16'],
+		shoulder_stability_exercise_name: ValueTypeT['uint16'],
+		shrug_exercise_name: ValueTypeT['uint16'],
+		side: ValueTypeT['enum'],
+		sit_up_exercise_name: ValueTypeT['uint16'],
+		source_type: ValueTypeT['enum'],
+		sport: ValueTypeT['enum'],
+		sport_bits_0: ValueTypeT['uint8z'],
+		sport_bits_1: ValueTypeT['uint8z'],
+		sport_bits_2: ValueTypeT['uint8z'],
+		sport_bits_3: ValueTypeT['uint8z'],
+		sport_bits_4: ValueTypeT['uint8z'],
+		sport_bits_5: ValueTypeT['uint8z'],
+		sport_bits_6: ValueTypeT['uint8z'],
+		sport_event: ValueTypeT['enum'],
+		squat_exercise_name: ValueTypeT['uint16'],
+		stroke_type: ValueTypeT['enum'],
+		sub_sport: ValueTypeT['enum'],
+		supported_exd_screen_layouts: ValueTypeT['uint32z'],
+		swim_stroke: ValueTypeT['enum'],
+		switch: ValueTypeT['enum'],
+		tap_sensitivity: ValueTypeT['enum'],
+		time_into_day: ValueTypeT['uint32'],
+		time_mode: ValueTypeT['enum'],
+		time_zone: ValueTypeT['enum'],
+		timer_trigger: ValueTypeT['enum'],
+		tissue_model_type: ValueTypeT['enum'],
+		tone: ValueTypeT['enum'],
+		total_body_exercise_name: ValueTypeT['uint16'],
+		triceps_extension_exercise_name: ValueTypeT['uint16'],
+		turn_type: ValueTypeT['enum'],
+		user_local_id: ValueTypeT['uint16'],
+		warm_up_exercise_name: ValueTypeT['uint16'],
+		watchface_mode: ValueTypeT['enum'],
+		water_type: ValueTypeT['enum'],
+		weather_report: ValueTypeT['enum'],
+		weather_severe_type: ValueTypeT['enum'],
+		weather_severity: ValueTypeT['enum'],
+		weather_status: ValueTypeT['enum'],
+		weight: ValueTypeT['uint16'],
+		wkt_step_duration: ValueTypeT['enum'],
+		wkt_step_target: ValueTypeT['enum'],
+		workout_capabilities: ValueTypeT['uint32z'],
+		workout_equipment: ValueTypeT['enum'],
+		workout_hr: ValueTypeT['uint32'],
+		workout_power: ValueTypeT['uint32'],
+		file: ValueTypeT['enum'],
 	};
 
-};

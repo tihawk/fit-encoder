@@ -1,16 +1,20 @@
-class FitEncoder {
+import DataBuffer from "./dataBuffer";
+import { Message } from "./fitTypes";
+
+export default class FitEncoder {
 	static unixEpoch = new Date(1970, 0, 1).getTime();
 	static fitEpoch = new Date(1989, 11, 31).getTime();
 	static headerSize = 14;
 
-	static toFitTimestamp(date)
+	header
+	static toFitTimestamp(date: Date)
 	{
 		const milliseconds = date.getTime();
 
 		return (milliseconds + FitEncoder.unixEpoch - FitEncoder.fitEpoch) / 1000;
 	}
 
-	static computeCrc(dataView, length)
+	static computeCrc(dataView: DataView, length: number)
 	{
 		const table =
 		[
@@ -18,7 +22,7 @@ class FitEncoder {
 			0xA001, 0x6C00, 0x7800, 0xB401, 0x5000, 0x9C01, 0x8801, 0x4400
 		];
 
-		var get16 = (crc, byte) =>
+		var get16 = (crc: number, byte: number) =>
 		{
 			let tmp = 0;
 			
@@ -43,7 +47,7 @@ class FitEncoder {
 		return crc;
 	}
 
-	writeHeader(dataLength)
+	writeHeader(dataLength: number)
 	{
 		console.log(`header with ${dataLength} bytes of data`);
 
@@ -87,7 +91,7 @@ class FitEncoder {
 		this.writeHeader(finalSize - headerPlusCrcSize);
 
 		const buffer = Message.dataBuffer.getFullBuffer();
-		Message.dataBuffer = null;
+		// Message.dataBuffer = null; // NOTE: can't be null?
 
 		let dataView = new DataView(buffer);
 

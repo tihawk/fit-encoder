@@ -1,4 +1,20 @@
-const ValueType = {
+import FitConstants from './fitConstants';
+import * as t from './fitTypesTypes'
+import DataBuffer from './dataBuffer'
+import { AllFieldNames as AllFieldNamesT } from './fitMessageNamesTypes';
+import FitMessagesI from './fitMessagesTypes';
+import FitConstantsI from './fitConstantsTypes';
+
+export interface DefinitionI {
+  field: Field
+  value: any
+  size: number
+  descriptor: any[]
+}
+
+export type GlobalMesgNumberI = FitConstantsI['mesg_num'][keyof FitConstantsI['mesg_num']]
+
+export const ValueType: t.ValueTypeT = {
 	enum: 0x00,
 	sint8: 0x01,
 	uint8: 0x02,
@@ -18,16 +34,19 @@ const ValueType = {
 	uint64z: 0x90
 };
 
-class Message {
-	constructor(globalMessageNumber, messageClass, ...fieldNames)
-	{
+export class Message {
+	globalMessageNumber
+	writtenDefinitionMessage
+	fields
+	constructor(globalMessageNumber: GlobalMesgNumberI, messageClass: FitMessagesI[keyof FitMessagesI], ...fieldNames: AllFieldNamesT) {
 		this.globalMessageNumber = globalMessageNumber;
 		this.writtenDefinitionMessage = false;
 		this.fields = [];
 
 		for (let key of fieldNames)
 		{
-			const field = messageClass[key];
+			// @ts-ignore
+			const field: Field = messageClass[key];
 
 			if (field === undefined)
 				throw `unable to find ${key} in message definition`
@@ -37,13 +56,13 @@ class Message {
 	}
 
 	// 16kB buffers
-	static dataBuffer = null;
+	static dataBuffer: DataBuffer; // NOTE: can't be null
 
-	static lastDefinitionMessage = null;
+	static lastDefinitionMessage: GlobalMesgNumberI | null = null;
 
 	get dataBuffer() { return Message.dataBuffer; }
 
-	writeDefinition(definitions)
+	writeDefinition(definitions: DefinitionI[])
 	{
 		// is a definition message needed?
 		// 1) if the last message differs by type; and
@@ -58,16 +77,18 @@ class Message {
 
 		const headerSize = 6;
 		let definitionSize = headerSize + (definitions.length * 3);
+		// @ts-ignore
 		let view = Message.dataBuffer.getChunk(definitionSize);
 
 		view.setUint8(0, 0x40);
 		view.setUint8(1, 0x00);
 		view.setUint8(2, 0x00);
-		view.setUint16(3, this.globalMessageNumber, true);
+		view.setUint16(3, this.globalMessageNumber as number, true);
 		view.setUint8(5, this.fields.length);
 
-		for (const ix in definitions)
+		for (const idx in definitions)
 		{
+			const ix = parseInt(idx)
 			const definition = definitions[ix];
 			view.setUint8(headerSize + (ix * 3), definition.field.id);
 			view.setUint8(headerSize + (ix * 3 + 1), definition.size);
@@ -77,8 +98,7 @@ class Message {
 		Message.lastDefinitionMessage = this.globalMessageNumber;
 	}
 
-	writeDataMessage(...values)
-	{
+	writeDataMessage(...values: any[]) {
 		const items = this.fields.map((field, i) => {
 			let descriptor = field.descriptor();
 			let value = values[i];
@@ -91,7 +111,7 @@ class Message {
 
 		const headerSize = 1;
 		let messageSize = items.reduce((acc, item) => acc + item.size, 0);
-
+		// @ts-ignore
 		let view = Message.dataBuffer.getChunk(headerSize + messageSize);
 		view.setUint8(0, 0x00);
 		let offset = 1;
@@ -127,8 +147,10 @@ class Message {
 	}
 }
 
-class Field {
-	constructor(fieldId, valueType) {
+export class Field {
+	fieldId
+	valueType
+	constructor(fieldId: number, valueType: FitConstants) {
 		this.fieldId = fieldId;
 		this.valueType = valueType;
 	}
@@ -138,7 +160,7 @@ class Field {
 		return this.descriptor()[3];
 	}
 	
-	value(input) {
+	value(input: DefinitionI['value']) {
 		if (input === undefined)
 			// the invalid value
 			return this.descriptor()[1];
@@ -150,14 +172,18 @@ class Field {
 		return Field.descriptorForType(this.valueType);
 	}
 
-	setString(offset, value)
+	// NOTE: what is this supposed to do? Seems very broken
+	setString(offset: number, value: any)
 	{
 		for (let i = 0; i < value.length; ++i)
 			this.setUint8(offset + i, value.charCodeAt(i));
-		this.setUint8(offset + value.length, 0x00);
+			this.setUint8(offset + value.length, 0x00);
+	}
+	setUint8(arg0: number, arg1: any) {
+		console.log('[setUint8] Method not implemented.');
 	}
 
-	static descriptorForType(valueType)
+	static descriptorForType(valueType: t.ValueTypeT[keyof t.ValueTypeT] | FitConstants): any[]
 	{
 		switch (valueType)
 		{
@@ -190,22 +216,21 @@ class Field {
 			case ValueType.byte:
 				return [1, 0xFF, DataView.prototype.setUint8, ValueType.byte];
 			case ValueType.sint64:
-				return [8, 0x7FFFFFFFFFFFFFFF, (dataView, offset) => {
+				return [8, 0x7FFFFFFFFFFFFFFF, (dataView: DataView, offset: number) => {
 					console.log('No support yet for signed 64-bit integers');
 				}, ValueType.sint64];
 			case ValueType.uint64:
-				return [8, 0xFFFFFFFFFFFFFFFF, (dataView, offset) => {
+				return [8, 0xFFFFFFFFFFFFFFFF, (dataView: DataView, offset: number) => {
 					console.log('No support yet for unsigned 64-bit integers');
 				}, ValueType.uint64];
 			case ValueType.uint64z:
-				return [8, 0x0000000000000000, (dataView, offset) => {
+				return [8, 0x0000000000000000, (dataView: DataView, offset: number) => {
 					console.log('No support yet for unsigned 64-bit integers');
 				}, ValueType.uint64z];
 			default:
 				// Get the type from FitConstants
-				return Field.descriptorForType(
-					FitConstants.constant_types[valueType.__name]
-				);
+				// @ts-ignore
+				return Field.descriptorForType(FitConstants.constant_types[valueType.__name]);
 		}
 	}
 }

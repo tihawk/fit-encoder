@@ -1,0 +1,42 @@
+{
+  "name": "fit-encoder",
+  "version": "0.1.0",
+  "description": "Encode FIT files with TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tihawk/fit-encoder.git"
+  },
+  "keywords": [
+    "fit",
+    "garmin",
+    "encode",
+    "binary",
+    "workout",
+    "activity",
+    "garmin"
+  ],
+  "author": "Kiril Panayotov Blagoev",
+  "license": "MIT",
+  "files": [
+    "dist/*",
+    "examples/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/tihawk/fit-encoder/issues"
+  },
+  "homepage": "https://github.com/tihawk/fit-encoder#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "typescript": "^4.9.5"
+  }
+}

@@ -5,9 +5,11 @@
 	ask for a write, without specifying an offset explicitly.
 */
 
-class DataBuffer
+export default class DataBuffer
 {
-	constructor(blockSize)
+	blocks: any[]
+	blockSize
+	constructor(blockSize: number)
 	{
 		// data blocks making up the buffer
 		this.blocks = [];
@@ -34,7 +36,7 @@ class DataBuffer
 
 	// returns a DataView of size `bytesNeeded` starting at the
 	// current position in the DataBuffer
-	getChunk(bytesNeeded)
+	getChunk(bytesNeeded: number)
 	{
 		let block = this.#getBlockFor(bytesNeeded);
 		let start = block.offset;
@@ -42,16 +44,14 @@ class DataBuffer
 		return new DataView(block.view.buffer, start, bytesNeeded);
 	}
 
-	getBufferSize()
-	{
+	getBufferSize() {
 		return this.blocks.reduce((acc, block) => {
 			return acc + block.offset;
 		}, 0);
 	}
 
 	// returns an ArrayBuffer of the final result
-	getFullBuffer()
-	{
+	getFullBuffer() {
 		const size = this.getBufferSize();
 		const result = new Uint8Array(size);
 		this.blocks.reduce((offset, block) => {
@@ -72,7 +72,7 @@ class DataBuffer
 		return this.blocks[this.blocks.length - 1];
 	}
 
-	#getBlockFor(bytesNeeded)
+	#getBlockFor(bytesNeeded: number)
 	{
 		let lastBlock = this.#lastBlock();
 

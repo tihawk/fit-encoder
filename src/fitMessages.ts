@@ -1,4 +1,7 @@
-class FitMessages {
+import { Field, ValueType } from './fitTypes'
+import FitConstants from './fitConstants'
+
+export default class FitMessages {
 	static file_id = {
 		"type": new Field(0, FitConstants.file),
 		"manufacturer": new Field(1, FitConstants.manufacturer),
@@ -117,8 +120,8 @@ class FitMessages {
 		"temperature_setting": new Field(21, FitConstants.display_measure),
 		"local_id": new Field(22, FitConstants.user_local_id),
 		"global_id": new Field(23, ValueType.byte),
-		"wake_time": new Field(28, FitConstants.localtime_into_day),
-		"sleep_time": new Field(29, FitConstants.localtime_into_day),
+		"wake_time": new Field(28, FitConstants.constant_types.localtime_into_day), //NOTE: the localtime wasn't being called properly?
+		"sleep_time": new Field(29, FitConstants.constant_types.localtime_into_day),
 		"height_setting": new Field(30, FitConstants.display_measure),
 		"user_running_step_length": new Field(31, ValueType.uint16),
 		"user_walking_step_length": new Field(32, ValueType.uint16),
@@ -574,7 +577,7 @@ class FitMessages {
 		"max_core_temperature": new Field(160, ValueType.uint16),
 	};
 
-	static length = {
+	static _length = { //  Static property 'length' conflicts with built-in property 'Function.length' of constructor function 'FitMessages'.
 		"message_index": new Field(254, FitConstants.message_index),
 		"timestamp": new Field(253, FitConstants.date_time),
 		"event": new Field(0, FitConstants.event),

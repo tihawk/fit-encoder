@@ -1,4 +1,4 @@
-# fit-encoder-js
+# fit-encoder
 
 Provides a couple of classes for generating FIT files in JavaScript. There
 are also some examples to show how to write an encoder for a given FIT file.
