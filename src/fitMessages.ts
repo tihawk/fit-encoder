@@ -919,7 +919,7 @@ export default class FitMessages {
 		"timestamp": new Field(254, FitConstants.date_time),
 		"duration": new Field(0, ValueType.uint32),
 		"repetitions": new Field(3, ValueType.uint16),
-		"weight": new Field(4, ValueType.float32),
+		"weight": new Field(4, ValueType.uint16),
 		"set_type": new Field(5, FitConstants.set_type),
 		"start_time": new Field(6, FitConstants.date_time),
 		"category": new Field(7, FitConstants.exercise_category),
