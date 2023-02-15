@@ -1,9 +1,8 @@
-import FitConstants from './fitConstants';
-import * as t from './fitTypesTypes'
+import FitConstants, { ValueType } from './fitConstants';
 import DataBuffer from './dataBuffer'
 import { AllFieldNames as AllFieldNamesT } from './fitMessageNamesTypes';
 import FitMessagesI from './fitMessagesTypes';
-import FitConstantsI from './fitConstantsTypes';
+import FitConstantsI, { ValueTypeT } from './fitConstantsTypes';
 
 export interface DefinitionI {
   field: Field
@@ -13,26 +12,6 @@ export interface DefinitionI {
 }
 
 export type GlobalMesgNumberI = FitConstantsI['mesg_num'][keyof FitConstantsI['mesg_num']]
-
-export const ValueType: t.ValueTypeT = {
-	enum: 0x00,
-	sint8: 0x01,
-	uint8: 0x02,
-	sint16: 0x83,
-	uint16: 0x84,
-	sint32: 0x85,
-	uint32: 0x86,
-	string: 0x07,
-	float32: 0x88,
-	float64: 0x89,
-	uint8z: 0x0A,
-	uint16z: 0x8B,
-	uint32z: 0x8C,
-	byte: 0x0D,
-	sint64: 0x8E,
-	uint64: 0x8F,
-	uint64z: 0x90
-};
 
 export class Message {
 	globalMessageNumber
@@ -183,7 +162,7 @@ export class Field {
 		console.log('[setUint8] Method not implemented.');
 	}
 
-	static descriptorForType(valueType: t.ValueTypeT[keyof t.ValueTypeT] | FitConstants): any[]
+	static descriptorForType(valueType: ValueTypeT[keyof ValueTypeT] | FitConstants): any[]
 	{
 		switch (valueType)
 		{

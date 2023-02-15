@@ -1,5 +1,6 @@
-import { Field, ValueType } from './fitTypes'
+import { Field } from './fitTypes'
 import FitConstants from './fitConstants'
+import { ValueType } from './fitConstants'
 
 export default class FitMessages {
 	static file_id = {
@@ -103,7 +104,7 @@ export default class FitMessages {
 		"gender": new Field(1, FitConstants.gender),
 		"age": new Field(2, ValueType.uint8),
 		"height": new Field(3, ValueType.uint8),
-		"weight": new Field(4, ValueType.uint16),
+		"weight": new Field(4, ValueType.float32),
 		"language": new Field(5, FitConstants.language),
 		"elev_setting": new Field(6, FitConstants.display_measure),
 		"weight_setting": new Field(7, FitConstants.display_measure),
