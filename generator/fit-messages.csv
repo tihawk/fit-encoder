@@ -853,7 +853,7 @@ set,,,
 ,254,timestamp,date_time
 ,0,duration,uint32
 ,3,repetitions,uint16
-,4,weight,uint16
+,4,weight,float32
 ,5,set_type,set_type
 ,6,start_time,date_time
 ,7,category,exercise_category
