@@ -30,6 +30,8 @@ BEGIN {
 
 }
 
+FNR==1 {next}
+
 $1 !~ /^$/ { name=$1; types[name] = $2 }
 $1 ~ /^$/  { kv[name,NR] = sprintf("\"%s\": %d", $3, $4) }
 

@@ -10,6 +10,8 @@ BEGIN {
 	printf "export default class FitMessages {\n"
 }
 
+FNR==1 {next}
+
 $1 !~ /^$/ {
 	if (first == 0) {
 		printf "\t};\n\n"
